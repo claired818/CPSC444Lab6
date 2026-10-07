@@ -1,0 +1,97 @@
+Activity #1:
+  1. What is ambient light?
+        Ambient light is the general lighting applied to all objects.
+  2. What happens when ambient light intensity increases?
+        The light gets brighter and blurs the edges of object faces.
+  3. Which intensity produces the brightest scene?
+        The value 1.0 produces the brightest effect.
+  4. Does ambient light create highlights or shadows?
+        Ambient lighting does not create highlights or shadows because it applies to all objects equally.
+
+Activity #2:
+  1. Which faces of the cube become brighter?
+        The cube faces turned toward the postion of the directional light get brighter.
+  2. Which faces become darker?
+        The cube faces turned away from the position of the directional light get darker.
+  3. Why does changing the light position affect visibility?
+        Changing the light postion affects visibility because it changes which parts of the cube the directional light hits. 
+  4. Which direction produces the strongest lighting effect?
+        The light pointing up (0, -1, 0) produces the stongest visual effect in my opinion.
+
+Activity #3:
+  1. Which color creates the highest contrast?
+        The red color produces the highest contrast.
+  2. Which color appears brightest?
+        The yellow color appears the brightest.
+  3. Why do dark areas remain dark even when the light color changes?
+        The dark areas stay dark because the directional light does not hit them, therefore their color remains the same.
+  4. Which color feels the most realistic?
+        The blue color feels the most realistic because it's closest to the gray color of the material.
+  5. Which color creates the most dramatic effect?
+        The green color creates the most dramatic effect.
+
+Activity #4:
+  1. Why do the highlights move across the cube?
+        The highlights move across the cube because the direction of the light is changing.
+  2. Why do some faces become brighter over time?
+        Some faces become brighter because they're catching more of the light.
+  3. Why does the cube appear different as it rotates?
+        The cube appears different as it rotates because the direction of the cube faces are changing which changes how much the directional light hits them.
+  4. How would animated lighting improve a video game scene?
+        Animated lighting would improve a video game scene by adding realism.
+
+Activity #6:
+  1. What color code did you use?
+        I used 0x7700ff.
+  2. Does your purple light appear exactly how you expected?
+        Yes. I wanted a color closer to purple than magenta, so I had more blue than red in my color.
+
+Activity #7:
+  1. How did you generate random colors?
+        I used Math.random() to generate three numbers between 0 and 1 to use as RGB values.
+  2. Which colors looked best?
+        The more saturated, brighter colors (higher RGB values) looked the best.
+  3. Did any colors make the cube difficult to see?
+        The darker colors (lower RGB values), especially dark blues, were harder to see.
+
+Activity #8:
+  1. How is a Point Light different from a Directional Light?
+        A directional light hits all faces it's touching the same. A point light hits faces differently depending on distance and angle.
+  2. Which light type resembles a light bulb?
+        A point light more closely resembles a light bulb.
+  3. Which light type resembles sunlight?
+        A directional light more closely resembles sunlight.
+  4. What happens when the Point Light is moved closer to the cube?
+        The light gets brighter and illuminates more of the cube face.
+  5. What happens when it is moved farther away?
+        The light gets duller and illuminates less of the cube face.
+
+Activity #9:
+  1. Which color dominates the scene?
+        I put my points lights directly opposite of each other, so neither really dominates over the other.
+  2. What happens when lights overlap?
+        When the lights overlap the colors mix.
+  3. Does the object look more realistic with multiple lights?
+        I think it does. Most places in real life have multiple sources of lit, so I makes sense that a realistic scene would as well.
+
+Reflection Questions:
+  1. What is ambient lighting?
+        Ambient light is the general lighting applied to all objects.
+  2. What is directional lighting?
+        Directional lighting is lighting that hits certain object faces based on its postion.
+  3. What is point lighting?
+        Point lighting is a light that emits in a certain direction in a conical shape.
+  4. Why do we need normals for lighting calculations?
+        We need normals for lighting calculations because they determine the angle the light will hit at.
+  5. Why do some faces of an object appear brighter than others?
+        Because they are facing a directional and/or a point light.
+  6. How does moving a light source affect a scene?
+        Moving a light source affects which objects within the scene it hits.
+  7. How does changing light color affect realism and mood?
+        Certain colors have certain connotations or associations. By making the lighting in a scene that color you bring those associations to the scene.
+  8. Why does Three.js make lighting easier than raw WebGL?
+        It makes it easier by doing all the shader calculations for you.
+  9. Which light type did you find most useful?
+        I found the ambient light the most useful. Because it affects all objects the same, it has a greater effect on the objects.
+  10. What was the most interesting thing you learned during this lab?
+        The most interesting thing I learned in this lab was the effects of mixing the colors of two lights.

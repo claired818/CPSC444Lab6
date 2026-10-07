@@ -49,42 +49,72 @@ scene.add(cube);
 const ambientLight =
     new THREE.AmbientLight(
         0xffffff,
-        1.0
+        0.2
     );
 
 scene.add(ambientLight);
 
 // Single Directional Light
-const directionalLight =
-    new THREE.DirectionalLight(
-        0xffffff,
-        0.65
+// const directionalLight =
+//     new THREE.DirectionalLight(
+//         0xffffff,
+//         0.65
+//     );
+
+// directionalLight.position.set(
+//     0,
+//     1,
+//     0
+// );
+
+// scene.add(
+//     directionalLight
+// );
+
+// Point Light #1
+const pointLight1 =
+    new THREE.PointLight(
+        0xff0000,
+        10
     );
 
-directionalLight.position.set(
-    0,
-    1,
-    0
+pointLight1.position.set(
+    3,
+    2,
+    2
 );
 
-scene.add(
-    directionalLight
+scene.add(pointLight1);
+
+// Point Light #2
+const pointLight2 =
+    new THREE.PointLight(
+        0x0000ff,
+        10
+    );
+
+pointLight2.position.set(
+    -3,
+    2,
+    2
 );
+
+scene.add(pointLight2);
 
 // Camera Position
 camera.position.z = 3;
 
-let lightIndex = 0;
-const lightPositions = [
-    [0, 1, 0],
-    [1, 1, 0],
-    [1, 0, 0],
-    [1, -1, 0],
-    [0, -1, 0],
-    [-1, -1, 0],
-    [-1, 0, 0],
-    [-1, 1, 0]
-];
+// let lightIndex = 0;
+// const lightPositions = [
+//     [0, 1, 0],
+//     [1, 1, 0],
+//     [1, 0, 0],
+//     [1, -1, 0],
+//     [0, -1, 0],
+//     [-1, -1, 0],
+//     [-1, 0, 0],
+//     [-1, 1, 0]
+// ];
 
 // let colorIndex = 0;
 // const colors = [
@@ -95,15 +125,15 @@ const lightPositions = [
 //     0x4477ff,
 //     0xaa00ff
 // ]
-let lightColor = [];
-setInterval(() =>
-    lightColor = [
-        Math.random(),
-        Math.random(),
-        Math.random()
-    ], 
-    1000
-);
+// let lightColor = [];
+// setInterval(() =>
+//     lightColor = [
+//         Math.random(),
+//         Math.random(),
+//         Math.random()
+//     ], 
+//     1000
+// );
 
 // Animation Loop
 function animate()
@@ -115,31 +145,31 @@ function animate()
     cube.rotation.x += 0.01;
     cube.rotation.y += 0.01;
 
-    ambientLight.color.set(
-        lightColor[0],
-        lightColor[1],
-        lightColor[2]
-    )
+    // ambientLight.color.set(
+    //     lightColor[0],
+    //     lightColor[1],
+    //     lightColor[2]
+    // )
 
-    lightIndex += 0.25;
-    // colorIndex += 0.25;
+    // lightIndex += 0.25;
+    // // colorIndex += 0.25;
 
-    if (lightIndex == lightPositions.length) {
-        lightIndex = 0;
-    }
-    // if (colorIndex == colors.length) {
-    //     colorIndex = 0;
+    // if (lightIndex == lightPositions.length) {
+    //     lightIndex = 0;
     // }
+    // // if (colorIndex == colors.length) {
+    // //     colorIndex = 0;
+    // // }
 
-    if (lightIndex % 1 == 0 || colorIndex % 1 == 0){
-        directionalLight.position.set(
-            lightPositions[lightIndex][0], 
-            lightPositions[lightIndex][1], 
-            lightPositions[lightIndex][2]
-        );
+    // if (lightIndex % 1 == 0 || colorIndex % 1 == 0){
+    //     directionalLight.position.set(
+    //         lightPositions[lightIndex][0], 
+    //         lightPositions[lightIndex][1], 
+    //         lightPositions[lightIndex][2]
+    //     );
 
-        // ambientLight.color.set(colors[colorIndex]);
-    }
+    //     // ambientLight.color.set(colors[colorIndex]);
+    // }
 
     renderer.render(
         scene,

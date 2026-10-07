@@ -49,7 +49,7 @@ scene.add(cube);
 const ambientLight =
     new THREE.AmbientLight(
         0xffffff,
-        0.5
+        1.0
     );
 
 scene.add(ambientLight);
@@ -86,15 +86,24 @@ const lightPositions = [
     [-1, 1, 0]
 ];
 
-let colorIndex = 0;
-const colors = [
-    0xff0000,
-    0xff8800,
-    0xffff00,
-    0x00ff00,
-    0x4477ff,
-    0xaa00ff
-]
+// let colorIndex = 0;
+// const colors = [
+//     0xff0000,
+//     0xff8800,
+//     0xffff00,
+//     0x00ff00,
+//     0x4477ff,
+//     0xaa00ff
+// ]
+let lightColor = [];
+setInterval(() =>
+    lightColor = [
+        Math.random(),
+        Math.random(),
+        Math.random()
+    ], 
+    1000
+);
 
 // Animation Loop
 function animate()
@@ -103,18 +112,24 @@ function animate()
         animate
     );
 
-    cube.rotation.x += 0.04;
-    cube.rotation.y += 0.04;
-        
+    cube.rotation.x += 0.01;
+    cube.rotation.y += 0.01;
+
+    ambientLight.color.set(
+        lightColor[0],
+        lightColor[1],
+        lightColor[2]
+    )
+
     lightIndex += 0.25;
-    colorIndex += 0.25;
+    // colorIndex += 0.25;
 
     if (lightIndex == lightPositions.length) {
         lightIndex = 0;
     }
-    if (colorIndex == colors.length) {
-        colorIndex = 0;
-    }
+    // if (colorIndex == colors.length) {
+    //     colorIndex = 0;
+    // }
 
     if (lightIndex % 1 == 0 || colorIndex % 1 == 0){
         directionalLight.position.set(
@@ -123,7 +138,7 @@ function animate()
             lightPositions[lightIndex][2]
         );
 
-        ambientLight.color.set(colors[colorIndex]);
+        // ambientLight.color.set(colors[colorIndex]);
     }
 
     renderer.render(
